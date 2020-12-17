@@ -16,8 +16,8 @@ router.post('/register', async (req, res) => {
     });
 
     await user.save();
-    // res.sendStatus(200);
-    res.redirect('/');
+    res.sendStatus(200);
+    // res.redirect('/');
   } catch (error) {
     res.status(403).json({ message: 'User existed!' });
   }
@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
         return next(err);
       }
 
-      return res.redirect('/');
+      return res.sendStatus(200);
     });
   })(req, res);
 });

@@ -15,7 +15,7 @@ const io = socketIO(server);
 
 require('./configs/mongo.config');
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static('dist'));
 app.use(express.json());
